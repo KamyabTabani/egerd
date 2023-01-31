@@ -1,29 +1,20 @@
-import React, {useState} from 'react';
-import './App.scss';
-import HeadBanner from "./components/ui/headbanner/headbanner";
-import BuyBenefitCard, {IBuyBenefitCard} from "./components/ui/buybeneficard/buybenefitcard";
-import Input from "./components/core/input/input";
-import Button from "./components/core/button/button";
-import ChineseSitesCard from "./components/ui/chineesesitescard/chinesesitescard";
-import Slider from "./components/ui/slider/slider";
-import AccordionBox, {IAccordion} from "./components/ui/accordion/accordion";
+import React, {useState} from "react";
+import HeadBanner from "../components/ui/headbanner/headbanner";
+import Input from "../components/core/input/input";
+import Button from "../components/core/button/button";
+import ContributeCard, {IContributeCard} from "../components/ui/contributecard/contributecard";
+import AccordionBox, {IAccordion} from "../components/ui/accordion/accordion";
 
-function App() {
-    const buyBenefitCardItems: IBuyBenefitCard[] = [
-        {image: require("./assets/images/pictures/buybenefit1.png"), title: "امکان دریافت نمونه محصول"},
-        {image: require("./assets/images/pictures/buybenefit2.png"), title: "مذاکره"},
-        {image: require("./assets/images/pictures/buybenefit3.png"), title: "حمل اکسپرس"},
-        {image: require("./assets/images/pictures/buybenefit4.png"), title: "پیدا کرئن تولید کننده معتبر"},
-    ]
-    const chineseSiteItems: JSX.Element[] = [
-        <ChineseSitesCard image={require("./assets/images/pictures/chineesesite1.png")}/>,
-        <ChineseSitesCard image={require("./assets/images/pictures/chineesesite2.png")}/>,
-        <ChineseSitesCard image={require("./assets/images/pictures/chineesesite3.png")}/>,
-        <ChineseSitesCard image={require("./assets/images/pictures/chineesesite4.png")}/>,
-        <ChineseSitesCard image={require("./assets/images/pictures/chineesesite1.png")}/>,
-        <ChineseSitesCard image={require("./assets/images/pictures/chineesesite2.png")}/>,
-        <ChineseSitesCard image={require("./assets/images/pictures/chineesesite3.png")}/>,
-        <ChineseSitesCard image={require("./assets/images/pictures/chineesesite4.png")}/>,
+const RequestProduct = () => {
+    const [nameValue, setNameValue] = useState("");
+    const [countValue, setCountValue] = useState("");
+    const [weightValue, setWeightValue] = useState("");
+    const [urlValue, setUrlValue] = useState("");
+    const contributeCardItems: IContributeCard[] = [
+        {image: require("../assets/images/pictures/contributebenefit1.png"), title: "امکان خرید عمده"},
+        {image: require("../assets/images/pictures/contributebenefit2.png"), title: "امکان مذاکره"},
+        {image: require("../assets/images/pictures/contributebenefit3.png"), title: "خرید از منابع اصلی"},
+        {image: require("../assets/images/pictures/contributebenefit4.png"), title: "فاکتور رسمی"},
     ]
     const accordionItems: IAccordion[] = [
         {
@@ -48,32 +39,16 @@ function App() {
                 "                        اساسا مورد استفاده قرار گیرد."
         },
     ]
-    const [nameValue, setNameValue] = useState("");
-    const [countValue, setCountValue] = useState("");
-    const [weightValue, setWeightValue] = useState("");
-    const [urlValue, setUrlValue] = useState("");
     return (
-        <div className="App">
-            <img src={require("./assets/images/pictures/Main.png")} alt="" className="img-fluid w-100"/>
-            <div className="container mt-4">
-                <div className="row">
-                    <HeadBanner className="mb-4" type={"rounded"}>
-                        <span>مزایای خرید از چین</span>
-                    </HeadBanner>
-                    {
-                        buyBenefitCardItems.map((buyBenefitCardItem, index) => {
-                            return (
-                                <div key={index} className="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-12 mb-3">
-                                    <BuyBenefitCard image={buyBenefitCardItem.image} title={buyBenefitCardItem.title}/>
-                                </div>
-                            );
-                        })
-                    }
-                </div>
-                <div className="row mt-4">
-                    <div className="col-lg-6 col-12 mb-3">
+        <div className="Request-Product pt-5">
+            <div className="container">
+                <div className="row d-flex flex-lg-row flex-md-column-reverse flex-column-reverse">
+                    <div className="col-lg-5 col-12 mb-3">
+                        <img src={require("../assets/images/pictures/handshake.png")} alt="" className="img-fluid"/>
+                    </div>
+                    <div className="col-lg-7 col-12 mb-3 pt-5">
                         <HeadBanner className="mb-4" type={"rounded"}>
-                            <span>فرم درخواست</span>
+                            <span>فرم درخواست کالا</span>
                         </HeadBanner>
                         <form>
                             <Input type={"text"} placeholder={"نام کالا"} value={nameValue} setValue={setNameValue}/>
@@ -96,17 +71,24 @@ function App() {
                             </div>
                         </form>
                     </div>
-                    <div className="col-lg-6 col-12 mb-3">
-                        <div className="h-100 w-100 rounded bg-dark">
-                        </div>
-                    </div>
                 </div>
             </div>
-            <div className="container mt-4">
+            <div className="container my-4">
                 <HeadBanner className="mb-4" type={"rounded"}>
-                    <span>سایت های معتبر چینی</span>
+                    <span>مزایای همکاری با ایگرد</span>
                 </HeadBanner>
-                <Slider items={chineseSiteItems}/>
+                <div className="row">
+                    {
+                        contributeCardItems.map((contributeCardItem, index) => {
+                            return (
+                                <div key={index} className="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-12 mb-3">
+                                    <ContributeCard image={contributeCardItem.image} title={contributeCardItem.title}/>
+                                </div>
+                            );
+                        })
+                    }
+                </div>
+                <img src={require("../assets/images/pictures/Main2.png")} alt="" className="img-fluid w-100"/>
             </div>
             <div className="container mt-5 mb-5">
                 {
@@ -118,7 +100,7 @@ function App() {
                 }
             </div>
         </div>
-    );
+    )
 }
 
-export default App;
+export default RequestProduct

@@ -1,0 +1,26 @@
+.Accordion-Box {
+  .chakra-accordion__item {
+    margin-bottom: 35px;
+  }
+  .chakra-accordion__button {
+    justify-content: space-between;
+    background-color: var(--gray);
+    color: var(--primary);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    z-index: 10;
+
+    span {
+      text-align: right;
+    }
+  }
+
+  .chakra-accordion__panel {
+    background-color: var(--gray);
+    color: var(--secondary);
+    padding: 10px;
+    border-radius:0 0 8px 8px;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,19 @@
+.Input {
+  border: none;
+  border-radius: 8px;
+  padding: 7px;
+  width: 100%;
+  background-color: var(--white);
+  box-shadow: var(--input-shadow);
+  margin-bottom: 15px;
+  transition: all ease 0.3s;
+
+  &::placeholder {
+    color: var(--gray-darker);
+  }
+
+  &:focus {
+    border-color: transparent;
+    outline: none;
+  }
+}

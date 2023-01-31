@@ -1,0 +1,17 @@
+.Button {
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  width: 100%;
+  display: block;
+  padding: 5px;
+  color: var(--white);
+}
+
+.Button[data-varient="primary"] {
+  background-color: var(--primary);
+}
+
+.Button[data-varient="secondary"] {
+  background-color: var(--secondary);
+}

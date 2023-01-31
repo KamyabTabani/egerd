@@ -1,0 +1,13 @@
+.Contribute-Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border-radius: 10px;
+  height: 200px;
+
+  span {
+    font-weight: 800;
+  }
+}

@@ -3,4 +3,11 @@
   --secondary: #d74656;
   --gray: #dfdfdf;
   --gray-darker: #9b9b9b;
+  --white: #fff;
+  --input-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
+  --card-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background-color: #f2f2f2 !important;
 }

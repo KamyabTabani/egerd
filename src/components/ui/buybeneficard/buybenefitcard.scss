@@ -1,0 +1,15 @@
+.Buy-Benefit-Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  height: 200px;
+
+  span {
+    font-weight: 800;
+  }
+}
